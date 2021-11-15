@@ -5,7 +5,7 @@ plate_width = 36;
 plate_depth = 36;
 plate_thick = 4;
 
-sphere_dia = 16.5;
+sphere_dia = 16.0;
 
 arm_depth = 8;
 arm_width = sphere_dia + 2 * 8;
@@ -39,7 +39,7 @@ difference () {
         
         // mounting sphere
         translate([sphere_dia/4,0,plate_thick + arm_height])
-        sphere(r = sphere_dia/2);
+        sphere(r = (sphere_dia + 0.5)/2);
         
         // cap screw holes
         translate([arm_depth/2, arm_width/2 - 4,0])

@@ -5,20 +5,26 @@ sphere_dia = 16;
 
 
 $fn = 50;
-screw_major = 8;
+
 screw_dia = 4.4;
-screw_segment = 8;
+
+countersink_dia = 8;
+countersink_depth = sphere_dia/2 - 2;
 
 difference () {
     union () {
         sphere(r = sphere_dia/2);
-        translate([0,0, sphere_dia/2])
-        cylinder(r = screw_major/2, h = sphere_dia/2 + screw_segment, center = true);
+
     }
     // center hole
     union() {
-        translate([0,0, sphere_dia/2])
-        cylinder(r = screw_dia/2, h = sphere_dia/2 + screw_segment, center = true);
+        // screw hole
+        translate([0,0, sphere_dia/4])
+        cylinder(r = screw_dia/2, h = sphere_dia/2, center = true);
+
+        // countersink
+        translate([0,0, countersink_depth/2  + 2])
+        cylinder(r = countersink_dia/2, h = countersink_depth, center = true);       
         
         // take out 1/2 of the sphere
         translate([0,0,-sphere_dia/4])

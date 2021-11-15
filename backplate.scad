@@ -20,21 +20,21 @@ union() {
     difference() {
         {
         // major square
-        cube([camera_square + lip_width, 
-            camera_square + lip_width, 
+        cube([camera_square + (2*lip_width), 
+            camera_square + (2*lip_width), 
             depth], center=true);
         }
         // subtract the center
         {
         // remove the center
-        cube([camera_square - lip_width, 
-            camera_square - lip_width, 
+        cube([camera_square - (2*lip_width), 
+            camera_square - (2*lip_width), 
             depth], center=true);
         // board mounting lip
         translate([0,0, (depth/2 - circuit_board_thickness/2)])
-            cube([camera_square,
-                camera_square,
-                circuit_board_thickness], center=true);
+            cube([camera_square + 1 ,
+                camera_square + 1,
+                circuit_board_thickness + 0.5], center=true);
         }
     }
     

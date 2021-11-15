@@ -31,11 +31,5 @@ difference () {
         translate([0, -(arm_width/2 - 4),0])
         cylinder(r = m4_pilot/2, h = arm_height, center = false);
         
-        // countersink 
-        translate([0, -(arm_width/2 - 4), arm_height/2 + 5])
-        cube([arm_depth, arm_depth, arm_height - 4], center = true);
-        
-        translate([0, (arm_width/2 - 4), arm_height/2 + 5])
-        cube([arm_depth, arm_depth, arm_height - 4], center = true);
     }
 }
