@@ -3,13 +3,13 @@
 
 plate_width = 36;
 plate_depth = 36;
-plate_thick = 4;
+plate_thick = 5;
 
 sphere_dia = 16.0;
 
 arm_depth = 8;
 arm_width = sphere_dia + 2 * 8;
-arm_height = 30;
+arm_height = 32;
 // 1/4" camera mount
 pilot_dia = 0.228 * 25.4;    // about 5mm
 

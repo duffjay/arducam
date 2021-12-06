@@ -8,6 +8,7 @@ arm_height = sphere_dia/2 + 4;
 
 
 m4_pilot = 3.35;
+m4_dia = 4.5;
 
 $fn = 50;
 
@@ -26,10 +27,14 @@ difference () {
         
         // cap screw holes
         translate([0, arm_width/2 - 4,0])
-        cylinder(r = m4_pilot/2, h = arm_height, center = false);
+        cylinder(r = m4_dia/2, h = arm_height, center = false);
         
         translate([0, -(arm_width/2 - 4),0])
-        cylinder(r = m4_pilot/2, h = arm_height, center = false);
+        cylinder(r = m4_dia/2, h = arm_height, center = false);
+        
+        // fix the globe screw
+        translate([0,0, arm_height/2])
+        cylinder(r = m4_pilot/2, h = arm_height, center = true);
         
     }
 }

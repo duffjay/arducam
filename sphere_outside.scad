@@ -8,8 +8,8 @@ $fn = 50;
 
 screw_dia = 4.4;
 
-countersink_dia = 8;
-countersink_depth = sphere_dia/2 - 2;
+countersink_dia = 8.5;      // verified good
+countersink_depth = sphere_dia/2 - 4;
 
 difference () {
     union () {
@@ -23,8 +23,8 @@ difference () {
         cylinder(r = screw_dia/2, h = sphere_dia/2, center = true);
 
         // countersink
-        translate([0,0, countersink_depth/2  + 2])
-        cylinder(r = countersink_dia/2, h = countersink_depth, center = true);       
+        translate([0,0, sphere_dia/2 - countersink_depth/2])
+        #cylinder(r = countersink_dia/2, h = countersink_depth, $fn=6, center = true);       
         
         // take out 1/2 of the sphere
         translate([0,0,-sphere_dia/4])

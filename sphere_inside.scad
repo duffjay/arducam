@@ -6,7 +6,7 @@ sphere_dia = 16;
 
 $fn = 50;
 screw_major = 8;
-screw_dia = 4.4;
+screw_dia = 2.5;      // use much small for sake of printing
 screw_segment = 8;
 
 difference () {
