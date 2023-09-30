@@ -8,7 +8,7 @@ $fn = 50;
 
 screw_dia = 4.4;
 
-countersink_dia = 8.5;      // verified good
+countersink_dia = 8.2;      // verified good
 countersink_depth = sphere_dia/2 - 4;
 
 difference () {
@@ -22,7 +22,7 @@ difference () {
         translate([0,0, sphere_dia/4])
         cylinder(r = screw_dia/2, h = sphere_dia/2, center = true);
 
-        // countersink
+        // countersink - nut
         translate([0,0, sphere_dia/2 - countersink_depth/2])
         #cylinder(r = countersink_dia/2, h = countersink_depth, $fn=6, center = true);       
         
